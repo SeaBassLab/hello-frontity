@@ -24,7 +24,7 @@ const Root = ({ state }) => {
         `
       }
     />
-    <Header>
+    <Header isPostType={data.isPostType} isPage={data.isPage}>
       <HeaderContent>
         <h1>Frontity Workshop</h1>
         <p>Current URL: {state.router.link}</p>
@@ -52,7 +52,9 @@ export default connect(Root)
 
 const Header = styled.header`
   background-color: #e5edee;
-  border-bottom: 8px solid maroon;
+  border-width: 0 0 8px 0;
+  border-style: solid;
+  border-color: ${(props) => (props.isPostType ? ( props.isPage ? 'lightsteelblue' : 'lightseagreen' ) : "maroon")};
 
   h1 {
     color: #4a4a4a;
