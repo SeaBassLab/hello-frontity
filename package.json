@@ -23,6 +23,7 @@
     "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.4.2",
     "@frontity/wp-source": "^1.11.5",
+    "dayjs": "^1.10.5",
     "frontity": "^1.16.0",
     "my-theme": "file:packages/my-theme",
     "npm": "^7.15.1"
