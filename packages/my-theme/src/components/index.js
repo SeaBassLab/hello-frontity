@@ -33,8 +33,6 @@ const Root = ({ state, actions }) => {
         <Menu>
           <Link link="/">Home</Link>
           <br />
-          <Link link="/page/2">More posts</Link>
-          <br />
           <Link link="/about-us">About Us</Link>
         </Menu>
       </HeaderContent>
