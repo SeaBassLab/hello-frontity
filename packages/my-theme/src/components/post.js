@@ -17,7 +17,8 @@ const Post = ({ state, libraries }) => {
         <meta name="description" content={post.excerpt.rendered} />
       </Head>
       <h2>{post.title.rendered}</h2>
-      <PostInfo>
+      {data.isPost ?
+        <PostInfo>
         <p>
             <strong>Posted: </strong>
             {formattedDate}
@@ -26,7 +27,9 @@ const Post = ({ state, libraries }) => {
             <strong>Author: </strong>
             {author.name}
         </p>
-      </PostInfo>  
+      </PostInfo>
+      : null
+      }  
       <Html2react html={post.content.rendered} />
     </div>
   )

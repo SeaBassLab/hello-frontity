@@ -9,11 +9,16 @@ const List = ({ state, actions }) => {
     <Items>
       {data.items.map((item) => {
         const post = state.source[item.type][item.id]
+        const fmediaId = post.featured_media;
+        const media = state.source.attachment[fmediaId];
         return (
-            <Link key={item.id} link={post.link}>
+          <Card key={item.id}>
+            {fmediaId > 0 &&
+              <Image alt={media.title.rendered} src={media.source_url} />}
+            <Link  link={post.link}>
             {post.title.rendered}
-            <br />
-          </Link>
+            </Link>
+          </Card>
         )
       })}
       <PrevNextNav>
@@ -42,7 +47,24 @@ const List = ({ state, actions }) => {
 
 export default connect(List)
 
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 343px;
+  margin: 5px;
+  border: 1px solid black;
+  boder-radius
+`
+
+const Image = styled.img`
+  width: 100%;
+  height: 200px;
+`
+
 const Items = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   & > a {
     display: block;
     font-size: 1.2em;
